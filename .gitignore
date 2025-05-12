@@ -1,2 +1,5 @@
 /target
 /Extensions
+/tests
+chromedriver.exe
+moviebot-rs.exe
