@@ -345,7 +345,7 @@ pub async fn main() {
         .setup(move |ctx, _ready, framework| {
             Box::pin(async move {
                 println!("Logged in as {}", _ready.user.name);
-                poise::builtins::register_in_guild(ctx, &framework.options().commands, GuildId::new(1000710976343134289)).await?;
+                poise::builtins::register_in_guild(ctx, &framework.options().commands, GuildId::new(1369273109303132170)).await?;
                 Ok(Data {
                     votes: Mutex::new(HashMap::new()),
                 })
