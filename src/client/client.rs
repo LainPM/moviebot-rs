@@ -1,7 +1,7 @@
 #![warn(clippy::str_to_string)]
 
 use crate::{client::commands, server::{classes::{fasel::FaselSearcher, netflix::{Netflix, NetflixSearcher}}, functions::quit_browser}, Streamer};
-
+use std::env;
 use poise::serenity_prelude as serenity;
 use ::serenity::all::{ButtonStyle, ComponentInteractionDataKind, CreateActionRow, CreateButton, CreateEmbed, CreateSelectMenu, CreateSelectMenuOption, EditMessage, GuildId};
 use std::{
@@ -354,7 +354,8 @@ pub async fn main() {
         .options(options)
         .build();
 
-    let token = "Discord bot token here";
+    let token = env::var("DISCORD_BOT_TOKEN")
+        .expect("expected token in env");
     let intents =
         serenity::GatewayIntents::non_privileged() | serenity::GatewayIntents::MESSAGE_CONTENT;
 
